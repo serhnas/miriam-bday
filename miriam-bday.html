@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday Miriam!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* background: url('https://images.unsplash.com/photo-1560969184-10fe8719e047?w=1200&q=80') center/cover; */
+            background: url('https://images.pexels.com/photos/2817497/pexels-photo-2817497.jpeg?_gl=1*1cz7zll*_ga*MTc0MjY2Njc2OC4xNzQ5ODg1NTk5*_ga_8JE65Q40S6*czE3NjY2NTIxODYkbzM4JGcxJHQxNzY2NjUyMjE3JGoyOSRsMCRoMA..') center/cover;
+            opacity: 0.15;
+            filter: grayscale(30%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .birthday-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 12vw, 6rem);
+            line-height: 1;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #f093fb 50%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .destination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2rem 0;
+        }
+
+        .destination-icon {
+            font-size: 3rem;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 2s ease-in-out infinite;
+            font-size: 2rem;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Info Cards Section */
+        .info-section {
+            padding: 4rem 1.5rem;
+            background: #111;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: linear-gradient(145deg, #1a1a1a, #222);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(240, 147, 251, 0.15);
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .info-sub {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+
+        /* Image Gallery Section */
+        .gallery-section {
+            padding: 4rem 0;
+            background: #0a0a0a;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 8vw, 3rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 1.5rem;
+        }
+
+        .gallery-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 0 1.5rem 2rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .gallery-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: #222;
+            border-radius: 4px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border-radius: 4px;
+        }
+
+        .gallery-item {
+            flex: 0 0 280px;
+            scroll-snap-align: center;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3rem 1.5rem 1.5rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-caption p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Food Section */
+        .food-section {
+            padding: 4rem 1.5rem;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .food-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .food-card::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1rem 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Itinerary Section */
+        .itinerary-section {
+            padding: 4rem 1.5rem;
+            background: #111;
+        }
+
+        .timeline {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #f093fb, #f5576c);
+        }
+
+        .day {
+            margin-bottom: 3rem;
+            padding-left: 60px;
+            position: relative;
+        }
+
+        .day-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .day-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-date {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            margin-bottom: 1rem;
+        }
+
+        .day-activities {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .activity {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+
+        .activity-icon {
+            font-size: 1.3rem;
+        }
+
+        /* Hotel Section */
+        .hotel-section {
+            padding: 4rem 1.5rem;
+            background: #0a0a0a;
+        }
+
+        .hotel-card {
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+
+        .hotel-image {
+            width: 100%;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+        }
+
+        .hotel-info {
+            padding: 1.5rem;
+        }
+
+        .hotel-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 4rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+
+        .footer-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-sub {
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .food-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 900px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="birthday-badge">🎂 Happy Birthday!</div>
+            <h1>Miriam ❤️</h1>
+            <p class="hero-subtitle">Die Döner Hauptstadt wartet...</p>
+            <div class="destination">
+                <span class="destination-icon">🚂</span>
+            </div>
+            <div class="destination">
+                <span>Stuttgart → Berlin</span>
+            </div>
+        </div>
+        <div class="scroll-hint">↓</div>
+    </section>
+
+    <!-- Trip Info -->
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">📅</div>
+                <div class="info-label">Wann</div>
+                <div class="info-value">21. – 23. Februar 2026</div>
+                <div class="info-sub">3 Tage Berlin!</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🚄</div>
+                <div class="info-label">Anreise</div>
+                <div class="info-value">FlixTrain</div>
+                <div class="info-sub">Stuttgart Hbf → Berlin Hbf</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🏨</div>
+                <div class="info-label">Hotel</div>
+                <div class="info-value">Premier Inn</div>
+                <div class="info-sub">Alexanderplatz</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sights Gallery -->
+    <section class="gallery-section">
+        <h2 class="section-title">Was uns erwartet 👀</h2>
+        <div class="gallery-scroll">
+            <div class="gallery-item">
+                <img src="https://d3dqioy2sca31t.cloudfront.net/Projects/cms/production/000/000/125/large/34bdc0d35a837339a8bc09889478570c/332Reichstag_RS.jpg?w=600&q=80" alt="Sehenswürdigkeiten">
+                <div class="gallery-caption">
+                    <h3>Sehenswürdigkeiten</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://last-paradise.com/wp-content/uploads/2015/01/Neue_Heimat_Village_Market_Streetfood2.jpg?w=600&q=80" alt="Geiles Essen">
+                <div class="gallery-caption">
+                    <h3>Geiles Essen</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.tip-berlin.de/wp-content/uploads/2020/08/imago0050384391h.jpg?w=600&q=80" alt="Weirde Leute">
+                <div class="gallery-caption">
+                    <h3>Weirde Leute</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://image.stern.de/9069710/t/kB/v2/w1440/r1.3333/-/clans-polizei-bilanz-clan-kriminalitaet.jpg?w=600&q=80" alt="Clan-Kriminalität">
+                <div class="gallery-caption">
+                    <h3>Clan-Kriminalität</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.dw.com/image/15776214_604.jpg?w=600&q=80" alt="Museumsinsel">
+                <div class="gallery-caption">
+                    <h3>Drogen</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXFubWVxM2tmeXN2ODAyMDVtankxMXZzYmRmaGV3dXR5a3p1ZTAydyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EJMyMO22UxP68/giphy.gif?w=600&q=80" alt="FUN">
+                <div class="gallery-caption">
+                    <h3>FUN</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Section -->
+    <section class="food-section">
+        <h2 class="section-title">Essen gehen 🍜</h2>
+        <span>Ich hol mir noch Tipps von Gule und Sahra</span>
+        <!-- <div class="food-grid">
+            <div class="food-card" data-label="Döner 🥙">
+                <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80" alt="Döner">
+            </div>
+            <div class="food-card" data-label="Currywurst 🌭">
+                <img src="https://images.unsplash.com/photo-1599921841143-819065a55cc6?w=400&q=80" alt="Currywurst">
+            </div>
+            <div class="food-card" data-label="Brunch 🥐">
+                <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&q=80" alt="Brunch">
+            </div>
+            <div class="food-card" data-label="Cocktails 🍸">
+                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&q=80" alt="Cocktails">
+            </div>
+        </div> -->
+    </section>
+
+    <!-- Itinerary -->
+    <section class="itinerary-section">
+        <h2 class="section-title">Der Plan (ca.) 📋</h2>
+        <div class="timeline">
+            <div class="day">
+                <div class="day-marker">1</div>
+                <h3 class="day-title">Erkundung</h3>
+                <p class="day-date">Samstag, 21. Februar</p>
+                <div class="day-activities">
+                    <div class="activity">
+                        <span class="activity-icon">🚄</span>
+                        <span>FlixTrain nach Berlin</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🏨</span>
+                        <span>Check-in Hotel</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🥙</span>
+                        <span>Hungry & Döner: Mit alles und scharf</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🚶</span>
+                        <span>Alexanderplatz erkunden</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🍽️</span>
+                        <span>Abendessen & Drinks?</span>
+                    </div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="day-marker">2</div>
+                <h3 class="day-title">Sightseeing</h3>
+                <p class="day-date">Sonntag, 22. Februar</p>
+                <div class="day-activities">
+                    <div class="activity">
+                        <span class="activity-icon">🥐</span>
+                        <span>Brunch irgendwo nice</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🚪</span>
+                        <span>Brandenburger Tor</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🏛️</span>
+                        <span>Reichstag (Kuppel!)</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🥙</span>
+                        <span>2 Hungry 2 Döner</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🎨</span>
+                        <span>East Side Gallery</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🌃</span>
+                        <span>Fernsehturm bei Nacht?</span>
+                    </div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="day-marker">3</div>
+                <h3 class="day-title">Immernoch Berlin</h3>
+                <p class="day-date">Montag, 23. Februar</p>
+                <div class="day-activities">
+                    <div class="activity">
+                        <span class="activity-icon">☕</span>
+                        <span>Gemütlich frühstücken</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🗺️</span>
+                        <span>Kiez erkunden (Kreuzberg?)</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🥙</span>
+                        <span>Döner 3: Berlin Drift (ja nochmal)</span>
+                    </div>
+                    <div class="activity">
+                        <span class="activity-icon">🚄</span>
+                        <span>Zurück nach Stuttgart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotel -->
+    <!-- <section class="hotel-section">
+        <h2 class="section-title">Unser Hotel 🛏️</h2>
+        <div class="hotel-card">
+            <img class="hotel-image" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Hotel">
+            <div class="hotel-info">
+                <h3 class="hotel-name">Premier Inn</h3>
+                <p class="hotel-location">
+                    <span>📍</span>
+                    <span>Berlin Alexanderplatz</span>
+                </p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <section class="footer">
+        <div class="footer-emoji">❤️</div>
+        <p class="footer-text">Ich freu mich drauf!</p>
+        <p class="footer-sub">– Serhat</p>
+    </section>
+
+</body>
+</html>
